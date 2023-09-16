@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>This is HTML</title>
+</head>
+
+<body>
+    <h1>Heading 1</h1>
+    <p>This is a sample paragraph</p>
+
+    <h2 style="color: red">Heading 2</h2>
+    <p>This is another paragraph.</p>
+
+    <!-- Ordered List -->
+    <ol>
+        <li>List Number 1</li>
+        <li>List Number 2</li>
+        <li>List Number 3</li>
+    </ol>
+
+    <!-- Unordered List -->
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+    </ul>
+
+    <a href="https://www.google.lk">Click Here</a> <br>
+
+    <a href="page.html">Page</a>
+
+    <!-- Hyperlink to Marks page -->
+
+    <div style="background-color: gray; color: white;"> <!-- Inline CSS -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th style="color: black">ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Telephone</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Bimsara Walallawita</td>
+                    <td>Kottawa</td>
+                    <td>0777143492</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Bimsara Walallawita</td>
+                    <td>Kottawa</td>
+                    <td>0777143492</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div style="background-color: yellow">
+
+
+        <h1>Contact Form</h1>
+
+        <form>
+            <label>Full Name</label>
+            <input type="text" name="fullName" id="fullName" placeholder="Enter your full name" required="true"
+                value="Bimsara" readonly="true" disabled="true" />
+
+            <label>Email</label>
+            <input type="email" placeholder="Your email address" required="true" />
+
+            <br>
+
+            <label>Address</label>
+            <textarea required="true" name="address" rows="5" cols="20"></textarea>
+
+            <br>
+
+            <label>Country</label>
+            <select name="country" required="true">
+                <option value="LK">Sri Lanka</option>
+                <option value="IN">India</option>
+                <option value="USA" selected="true">United States of America</option>
+            </select>
+
+            <input type="radio" name="contact" value="telephone" />
+            <label>Telephone</label>
+
+            <input type="radio" name="contact" value="email" />
+            <label>Email</label>
+
+            <br>
+            <input type="checkbox" name="terms_and_conditions" value="agree" />
+            <label>I Agree to the Terms and Conditions.</label>
+
+            <br>
+
+            <label>File Upload</label>
+            <input type="file" name="file_upload" />
+
+            <input type="password" />
+
+            <button type="submit">Send</button>
+
+        </form>
+    </div>
+</body>
+
+</html>

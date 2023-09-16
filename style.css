@@ -1,0 +1,108 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    /* CSS Selector - Select H1 Tag from Body */
+    color: #4c4c4c;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.header-paragraph {
+    /* Select class header-paragraph tag from body */
+    color: #4c4c4c;
+}
+
+.header {
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+
+    /* Adding Internal Space 
+        */
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+
+    padding: 15px;
+    /* All sides */
+    padding: 15px 20px 15px 20px;
+    /* Top Right Bottom Left */
+    padding: 15px 20px;
+    /*Top and Bottom Left and Right */
+
+
+    /*Adding external space */
+    margin-bottom: 50px;
+
+}
+
+.header-inner {
+    background-color: rgba(255,255,255,0.8);
+    padding: 15px 25px;
+    border-radius: 25px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-link { /* Selecting Header hyperlink */
+    text-decoration: none;
+    color: #fff;
+    background-color: #0b9994;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 25px 0;
+    display: inline-block; /* Margin property works only if the display type is block or inline-block */
+}
+
+.header-link:hover {
+    color: #0b9994;
+    background-color: #fff;
+    border: 2px solid #0b9994; /* Adding a border */
+}
+
+.content {
+    display: flex;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: start;
+    justify-content: start;
+    flex-direction: row;
+}
+
+.column {
+    width: 50%;
+}
+
+.large-column {
+    width: 50%;
+}
+
+.small-column {
+    width: 25%;
+}
+
+@media(max-width: 767px) { /*if Mobile use below styles */
+
+    .content {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
+
+/* Mobile - 767px | Tab: 960px | Small Laptop - 1024px | Desktop -
+1200px - 1440px | Full HD - 1920px | 4K 2560px **/
+
+@media(min-width: 768px) {
+
+}
