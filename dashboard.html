@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="form">
-                    <form onsubmit="addToCars()">
+                    <form onsubmit="addToCars(event)">
                         <label>Vehicle Name</label>
                         <input type="text" id="vehicleName" required>
 
@@ -60,6 +60,16 @@
 
                 </ul>
 
+                <form onsubmit="submitForm(event)">
+                    <input type="text" id="userName" placeholder="User Name" required />
+                    <input type="password" id="password" placeholder="Password" required />
+                    <input type="email" id="email" placeholder="Email" required />
+                    <input type="text" id="phone" placeholder="Telephone" required />
+                    <button type="submit">Submit</button>
+
+                    <p id="errorMsg"></p>
+                </form>
+
             </div>
 
         </div>
@@ -68,10 +78,42 @@
 
     <script>
 
+        const submitForm = (event) => {
+            event.preventDefault();
+
+            let username = document.getElementById("userName").value;
+            let password = document.getElementById("password").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            let errorMsg = document.getElementById("errorMsg");
+
+            let email_regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+            let phone_regex = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+
+            if(username.length < 8) {
+                errorMsg.innerHTML = "Username must have atleast 8 characters";
+            } else if (password.length < 8) {
+                errorMsg.innerHTML = "Password must have atleast 8 characters";
+            } else if (!email_regex.test(email)) {
+                errorMsg.innerHTML = "Please enter a valid email address";
+            } else if (!phone_regex.test(phone)) {
+                errorMsg.innerHTML = "Please enter a valid phone number";
+            } else {
+                errorMsg.innerHTML = "";
+
+                //submit the form to Serverside.
+            }
+
+        }
+
+
         let cars = [];
 
-        function addToCars() {
-            
+        const addToCars = (event) => { //Arrow function
+
+            event.preventDefault();
+
             let carsList = document.getElementById("carsList"); //Find the Element with ID 'carsList'
             let vehicleName = document.getElementById("vehicleName").value; //get the value entered by user
 
@@ -79,17 +121,13 @@
 
             carsList.innerHTML = "";
 
-            let index = 0;
-
-            while(index < cars.length) {
-                carsList.innerHTML += `<li>${cars[index]}</li>`;
-
-                index++;
-            }
+            cars.map((car) => {
+                carsList.innerHTML += `<li>${car}</li>`;
+            })
 
 
             document.getElementById("vehicleName").value = "";
-            
+
         }
 
 
