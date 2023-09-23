@@ -48,12 +48,53 @@
                     </ul>
                 </div>
 
-                Main content area
+                <div class="form">
+                    <form onsubmit="addToCars()">
+                        <label>Vehicle Name</label>
+                        <input type="text" id="vehicleName" required>
+
+                        <button type="submit">Add to List</button>
+                    </form>
+                </div>
+                <ul id="carsList">
+
+                </ul>
+
             </div>
 
         </div>
     </div>
     <script src="https://kit.fontawesome.com/c531138acb.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        let cars = [];
+
+        function addToCars() {
+            
+            let carsList = document.getElementById("carsList"); //Find the Element with ID 'carsList'
+            let vehicleName = document.getElementById("vehicleName").value; //get the value entered by user
+
+            cars.push(vehicleName);
+
+            carsList.innerHTML = "";
+
+            let index = 0;
+
+            while(index < cars.length) {
+                carsList.innerHTML += `<li>${cars[index]}</li>`;
+
+                index++;
+            }
+
+
+            document.getElementById("vehicleName").value = "";
+            
+        }
+
+
+    </script>
+
 </body>
 
 </html>
