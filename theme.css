@@ -61,3 +61,8 @@ input:focus-visible {
     cursor: pointer;
     background-color: #508aff;
 }
+
+.error-message {
+    font-size: 14px;
+    color: rgb(242, 79, 79)
+}
